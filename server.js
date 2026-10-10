@@ -49,11 +49,10 @@ res.json({
   keyId: process.env.RAZORPAY_KEY_ID
 });
 ```
-
 } catch (error) {
-res.status(500).json({ error: "Order create nahi hua" });
+  console.error("CREATE ORDER ERROR:", error);
+  res.status(500).json({ error: "Order create nahi hua" });
 }
-});
 
 app.post("/verify-payment", async (req, res) => {
 try {
